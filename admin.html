@@ -26,9 +26,9 @@
     <script>
         let tg = window.Telegram.WebApp;
         tg.MainButton.show();
-        f.setText("Подробнее");
-        Telegram.WebApp.onEvent('mainButtonClicked', function(){
-	        tg.sendData("some string that we need to send"); 
+        tg.MainButton.setText("Подробнее");
+        tg.onClick(function(){
+	        tg.sendData("some string that we need to send");
         });
 
 
