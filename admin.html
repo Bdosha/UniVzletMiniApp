@@ -9,7 +9,7 @@
             const params = new URLSearchParams(window.location.search);
             return {
                 users: params.get("users") || "не задано",
-                active: params.get("active") || "не задано"
+                active: params.get("active") || "не задано",
                 urls: params.get("urls") || "не задано"
             };
         }
