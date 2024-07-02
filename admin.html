@@ -24,13 +24,16 @@
         window.onload = displayParams;
     </script>
     <script>
+
         let tg = window.Telegram.WebApp;
+        function onMainButtonClicked() {
+            tg.sendData("dfdfdf");
+            }
+        
         tg.MainButton.show();
         tg.MainButton.setText("Подробнее");
-        let button = tg.MainButton;
-        button.onclick = function() {
-            tg.sendData("some string that we need to send");
-        };
+        Telegram.WebApp.onEvent('mainButtonClicked', onMainButtonClicked);
+
 
 
     </script>
