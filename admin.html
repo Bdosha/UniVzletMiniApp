@@ -27,7 +27,7 @@
         let tg = window.Telegram.WebApp;
         tg.MainButton.show();
         tg.MainButton.setText("Подробнее");
-        Telegram.WebApp.onEvent('mainButtonClicked', function(){
+        Telegram.WebApp.onClick(function(){
 	        tg.sendData("some string that we need to send");
 	        //при клике на основную кнопку отправляем данные в строковом виде
         });
