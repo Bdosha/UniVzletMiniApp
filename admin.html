@@ -26,9 +26,9 @@
     <script>
         function test() {
             let tg = window.Telegram.WebApp;
-        tg.MainButton.isVisible = true
-        tg.setText("Подробнее")
-        tg.onClick(tg.sendData("werwewer"))
+        tg.MainButton.show();
+        tg.setText("Подробнее");
+        tg.onClick(tg.sendData("werwewer"));
         }
 
         // При загрузке страницы вызываем функцию для отображения параметров
