@@ -24,15 +24,10 @@
         window.onload = displayParams;
     </script>
     <script>
-        function test() {
-            let tg = window.Telegram.WebApp;
-        tg.MainButton.show();
-        tg.setText("Подробнее");
-        tg.onClick(tg.sendData("werwewer"));
-        }
-
-        // При загрузке страницы вызываем функцию для отображения параметров
-        window.onload = test;
+        let f = Telegram.WebApp.MainButton.show();
+        f.setText("Подробнее");
+        f.onClick(tg.sendData("werwewer"));
+        
 
     </script>
     <meta charset="UTF-8">
