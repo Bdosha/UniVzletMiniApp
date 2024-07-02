@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://forms.yandex.ru/_static/embed.js"></script>
+    <script>
+        // Функция для получения параметров из URL
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                users: params.get("users") || "не задано",
+                urls: params.get("urls") || "не задано"
+            };
+        }
+
+        // Функция для отображения параметров на странице
+        function displayParams() {
+            const { users, urls } = getUrlParams();
+            document.getElementById("usersCount").textContent = `Количество пользователей - ${users}`;
+            document.getElementById("urlsSent").textContent = `Отправлено ссылок - ${urls}`;
+        }
+
+        // При загрузке страницы вызываем функцию для отображения параметров
+        window.onload = displayParams;
+    </script>
+    <script>
+        function test() {
+            let tg = window.Telegram.WebApp;
+        tg.MainButton.isVisible = true
+        tg.setText("Подробнее")
+        tg.onClick(tg.sendData("werwewer"))
+        }
+
+        // При загрузке страницы вызываем функцию для отображения параметров
+        test.onload = displayParams;
+
+    </script>
+    <meta charset="UTF-8">
+    <title>админка</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+        body {
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 18px;
+            font-family: "League Spartan", sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>Статистика</h1>
+<p id="usersCount">Количество пользователей - </p>
+<p id="urlsSent">Отправлено ссылок - </p>
+
+
+</body>
+</html>
