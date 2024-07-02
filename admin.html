@@ -16,7 +16,7 @@
 
         // Функция для отображения параметров на странице
         function displayParams() {
-            const { users, urls } = getUrlParams();
+            const { users,active, urls } = getUrlParams();
             document.getElementById("usersCount").textContent = `Количество пользователей - ${users}`;
             document.getElementById("activeUsers").textContent = `Активных пользователей - ${active}`;
             document.getElementById("urlsSent").textContent = `Отправлено ссылок - ${urls}`;
